@@ -1,4 +1,4 @@
-from candidate import Candidate
+from candidate import *
 
 CANDIDATES = {
 	'A': Candidate('Anatoliy', [5, 5, 9, 5]),

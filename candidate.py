@@ -1,10 +1,10 @@
-def normalize(w):
+def norm_dict(w):
 	s = sum(w.values())
 	return {k: w[k] / s for k in w}
 
 
 # order matters
-W = normalize({
+W = norm_dict({
 	'education': 8,
 	'physical-condition': 2,
 	'appearance': 6,
@@ -18,7 +18,7 @@ class Candidate:
 		self.__w = {k: w[i] for i, k in enumerate(W)}
 
 	def ws(self):
-		return self.__w
+		return [w for w in self.__w.values()]
 
 	def __str__(self):
 		return self.__n
