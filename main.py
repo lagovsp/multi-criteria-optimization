@@ -1,16 +1,13 @@
 from prettytable import PrettyTable
-from candidate import *
-from input import *
+from input import CANDIDATES
+from candidate import W
 
 
-def make_table(W, C):
-	titles = ['Candidate \\ Criteria']
+def make_table(w, c):
 	table = PrettyTable()
-	table.add_column(titles[0], [c.__str__() for c in C.values()])
-	for i, key in enumerate(W.keys()):
-		print(key)
-		print([c.ws()[i] for c in C])
-		# table.add_column(key, [c.ws()[i] for c in C.values()])
+	table.add_column('Candidate \\ Criteria', [v for v in c.values()])
+	for key in w:
+		table.add_column(key, [c[k].ws()[key] for k in c])
 	print(table)
 
 

@@ -1,8 +1,6 @@
 def normalize(w):
 	s = sum(w.values())
-	for key in w:
-		w[key] /= s
-	return w
+	return {k: w[k] / s for k in w}
 
 
 # order matters
@@ -17,12 +15,10 @@ W = normalize({
 class Candidate:
 	def __init__(self, n, w):
 		self.__n = n
-		self.__w = W
-		for i, key in enumerate(self.__w):
-			self.__w[key] = w[i]
+		self.__w = {k: w[i] for i, k in enumerate(W)}
 
 	def ws(self):
-		return self.__w.values()
+		return self.__w
 
 	def __str__(self):
 		return self.__n
