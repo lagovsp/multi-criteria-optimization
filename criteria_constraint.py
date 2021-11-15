@@ -8,9 +8,8 @@ def check_candidate(line, restrictions, lower_border = True):
 			if lower_border:
 				if line[i] < it:
 					return False
-			if not lower_border:
-				if line[i] > it:
-					return False
+			elif line[i] > it:
+				return False
 	return True
 
 

@@ -11,7 +11,7 @@ class Candidate:
 
 	def __str__(self):
 		return self.n
-	
+
 
 def norm_list(w):
 	s = sum(it[1] for it in w)
