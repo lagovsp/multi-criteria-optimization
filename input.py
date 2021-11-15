@@ -1,4 +1,4 @@
-from candidate import *
+from candidate import Candidate, norm_list
 
 W = norm_list([
 	['education', 8],

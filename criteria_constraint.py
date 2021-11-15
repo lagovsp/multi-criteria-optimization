@@ -1,5 +1,5 @@
-from tools import *
-from input import *
+from tools import show_table
+from candidate import Candidate
 
 
 def check_candidate(line, restrictions, lower_border = True):

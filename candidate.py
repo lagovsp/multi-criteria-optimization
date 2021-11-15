@@ -1,8 +1,3 @@
-def norm_list(w):
-	s = sum(it[1] for it in w)
-	return [[it[0], it[1] / s] for it in w]
-
-
 class Candidate:
 	main_criteria_ind = None
 
@@ -16,3 +11,8 @@ class Candidate:
 
 	def __str__(self):
 		return self.n
+	
+
+def norm_list(w):
+	s = sum(it[1] for it in w)
+	return [[it[0], it[1] / s] for it in w]
