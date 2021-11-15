@@ -3,7 +3,8 @@ from input import *
 
 
 def main():
-	crit_const(W, CANDIDATES, 'character')
+	print('Criteria Constraint Method:')
+	criteria_constraint(W, CANDIDATES, 'appearance')
 
 
 if __name__ == '__main__':

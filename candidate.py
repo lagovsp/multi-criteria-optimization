@@ -1,24 +1,18 @@
-def norm_dict(w):
-	s = sum(w.values())
-	return {k: w[k] / s for k in w}
-
-
-# order matters
-W = norm_dict({
-	'education': 8,
-	'physical-condition': 2,
-	'appearance': 6,
-	'character': 7
-})
+def norm_list(w):
+	s = sum(it[1] for it in w)
+	return [[it[0], it[1] / s] for it in w]
 
 
 class Candidate:
-	def __init__(self, n, w):
-		self.__n = n
-		self.__w = {k: w[i] for i, k in enumerate(W)}
+	main_criteria_ind = None
 
-	def ws(self):
-		return [w for w in self.__w.values()]
+	@staticmethod
+	def main_criteria_sort_key(c):
+		return c.ws[Candidate.main_criteria_ind]
+
+	def __init__(self, n, ws):
+		self.n = n
+		self.ws = ws
 
 	def __str__(self):
-		return self.__n
+		return self.n
