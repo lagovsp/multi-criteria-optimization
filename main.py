@@ -18,6 +18,10 @@ def main():
 	weigh_combine_criteria(W, CANDIDATES, ['character', 'appearance'], aim_max = True)
 	print()
 
+	print(bg.blue + 'Hierarchy Analysis Method:' + bg.rs)
+	# hierarchy_analysis(W, CANDIDATES, ['character', 'appearance'], aim_max = True)
+	print()
+
 
 if __name__ == '__main__':
 	main()
