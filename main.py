@@ -2,18 +2,19 @@ from criteria_constraint import criteria_constraint
 from pareto import pareto
 from weighing_combining_criteria import weigh_combine_criteria
 from input import W, CANDIDATES
+from sty import bg
 
 
 def main():
-	print('Criteria Constraint Method:')
+	print(bg.blue + 'Criteria Constraint Method:' + bg.rs)
 	criteria_constraint(W, CANDIDATES, 'character', aim_max = True)
 	print()
 
-	print('Pareto Set Method:')
+	print(bg.blue + 'Pareto Set Method:' + bg.rs)
 	pareto(W, CANDIDATES, ['character', 'appearance'], aim_max = True)
 	print()
 
-	print('Weighing and Combining Criteria Method:')
+	print(bg.blue + 'Weighing and Combining Criteria Method:' + bg.rs)
 	weigh_combine_criteria(W, CANDIDATES, ['character', 'appearance'], aim_max = True)
 	print()
 

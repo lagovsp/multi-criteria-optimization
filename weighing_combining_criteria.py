@@ -1,4 +1,5 @@
 from tools import show_table, normalize_matrix, norm_list
+from termcolor import colored
 import numpy as np
 
 
@@ -40,9 +41,9 @@ def weigh_combine_criteria(w, c, main_criteria, aim_max = True):
 	print(f'Normalized criteria weights vector: {av}')
 	print(f'After multiplying: {fv}')
 	if aim_max:
-		print('We maximize the concerned parameters')
+		print('We maximize the concerned parameters ' + colored(f'{main_criteria}', 'green'))
 		ind = np.array(fv).argmax()
 	else:
-		print('We minimize the concerned parameters')
+		print('We minimize the concerned parameters ' + colored(f'{main_criteria}', 'green'))
 		ind = np.array(fv).argmin()
-	print(f'The most suitable option is {c[ind].__str__()} {c[ind].ws()}')
+	print(f'The most suitable option is ' + colored(f'{c[ind].__str__()}', 'red') + f' {c[ind].ws()}')
