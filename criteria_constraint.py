@@ -21,6 +21,6 @@ def criteria_constraint(w, c, main_criteria, aim_max = True):
 	print(f'The lowest values border: {min_allowed}')
 	pass_cs = [c[i] for i, line in enumerate(m) if check_candidate(line, min_allowed, lower_border = aim_max)]
 	pass_cs.sort(key = Candidate.main_criteria_sort_key, reverse = aim_max)
-	print(f'Candidates to meet minimum requirements: {[p.n for p in pass_cs]}')
+	print(f'Candidates to meet minimum requirements: {[p.__str__() for p in pass_cs]}')
 	print(f'The most suitable option is {pass_cs[0]} {pass_cs[0].ws}')
 	return pass_cs[0]

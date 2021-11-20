@@ -1,8 +1,14 @@
 from prettytable import PrettyTable
+import copy
+
+
+def norm_list(v):
+	s = sum(it for it in v)
+	return [it / s for it in v]
 
 
 def matrix(cs):
-	return [ci.ws for ci in [c for c in cs]]
+	return [ci.ws() for ci in [c for c in cs]]
 
 
 def show_matrix(m):
@@ -15,20 +21,18 @@ def show_matrix(m):
 def show_table(w, cs):
 	table = PrettyTable()
 	m = matrix(cs)
-	table.add_column('Candidate \\ Criteria', [c.n for c in cs])
+	table.add_column('Candidate \\ Criteria', [c.__str__() for c in cs])
 	for i in range(len(w)):
 		table.add_column([it[0] for it in w][i], [line[i] for line in m])
 	print(table)
 	return m
 
 
-def normalize_matrix(m, ps = None):  # not used
+def normalize_matrix(m, ps = None):
+	mat = copy.deepcopy(m)
 	for j in range(len(m[0])):
 		if not j == ps:
-			cur_col = [i[j] for i in m]
-			print(cur_col)
-			c_min = min(cur_col)
-			c_max = max(cur_col)
-			for i in range(len(m)):
-				m[i][j] = (m[i][j] - c_min) / (c_max - c_min)
-	return m
+			c_sum = sum([i[j] for i in m])
+			for line in mat:
+				line[j] /= c_sum
+	return mat

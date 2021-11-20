@@ -1,6 +1,6 @@
-from candidate import Candidate, norm_list
+from candidate import Candidate, norm_list_v2
 
-W = norm_list([
+W = norm_list_v2([
 	['education', 8],
 	['physical-condition', 2],
 	['appearance', 6],
