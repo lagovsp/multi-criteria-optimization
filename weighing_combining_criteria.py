@@ -1,17 +1,8 @@
-from prettytable import PrettyTable
 from tools import show_matrix, show_table, normalize_matrix, norm_list
 from termcolor import colored
 import numpy as np
 from sty import fg
 
-
-# def pairwise_comparison(i, j, mci):
-# 	if (i in mci and j in mci) or (i not in mci and j not in mci):
-# 		return 0.5
-# 	if i in mci and j not in mci:
-# 		return 1
-# 	else:
-# 		return 0
 
 def pairwise_comparison(i, j, mci):
 	if mci[i] > mci[j]:

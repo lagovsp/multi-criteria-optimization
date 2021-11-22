@@ -3,7 +3,6 @@ import copy
 
 
 def norm_list(v):
-	# s = sum(it for it in v)
 	s = sum(v)
 	return [it / s for it in v]
 
