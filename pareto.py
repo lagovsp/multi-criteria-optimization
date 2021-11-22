@@ -1,3 +1,4 @@
+from tools import show_table
 from matplotlib import pyplot as plt
 from termcolor import colored
 
@@ -5,6 +6,7 @@ from termcolor import colored
 def pareto(w, c, main_criteria, aim_max = True):
 	c_indexes = [[it[0] for it in w].index(c) for c in main_criteria]
 	plt.title(f'Pareto Set Method')
+	show_table(w, c)
 	print('The optimized criteria: ' + colored(f'{main_criteria}', 'green'))
 	plt.xlabel(w[c_indexes[0]][0])
 	plt.ylabel(w[c_indexes[1]][0])
@@ -22,4 +24,3 @@ def pareto(w, c, main_criteria, aim_max = True):
 	plt.show()
 	best = c[distances.index(min(distances))]
 	print(f'The most suitable option is ' + colored(f'{best.__str__()}', 'red') + f' {best.ws()}')
-	return 0
